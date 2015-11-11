@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Etcha-Sketch</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+  </head>
+  <body>
+    <h1>Home Made Etch-A-Sketch</h1>
+    <p class="intro">Created for the  <a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery" target="_blank">Odin Project's tutorial</a>. See the source files on <a href="https://github.com/brydave" target="_blank">Github</a>.</p>
+    
+    <div class="wrapper">
+      <div class="controls">
+        <label for="gridnumber"> Create a new grid </label>
+          <input name="gridnumber" placeholder="Resize Grid">
+          <button> Create </button> 
+
+        <label> Options </label>
+          <input type="radio" name="option" value="blue" checked>
+          <input type="radio" name="option" value="variable">
+          <input type="radio" name="option" value="surprise">
+      </div>
+    
+      <div class="grid">
+
+      </div>
+    </div><!--wrapper-->
+    <!-- browser sync -->
+    <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.6.4.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="scripts/scripts.js"></script>
+</html>
