@@ -20,7 +20,7 @@ function createBlocks(){
   // and generate that number of blocks
   for (var i = 0; i < $gridSize; i++){
     var $block = $('<section class="block"></div>');
-    $('.grid').append($block).fadeIn();
+    $('.block-wrapper').append($block).fadeIn();
   }
 
   console.log($gridSize);
@@ -33,9 +33,20 @@ function resizeBlocks(){
   // i.e. (500 blocks = specific area & block size) - block size/unit increase
 
   // gathering up all of the quantities
-  var $area = $('.grid').width();
-  var $blockArea = $('.block').width();
+  // start by finding width and height of 'grid'
+  var $width = $('.grid').width();
+  var $height = $('.grid').height();
+  // then find the area of 'grid'
+  var $area = $width * $height;
+  // get the quantity of block input in the system
   var $blockNumber = $('input#gridnumber').val();
+  // calculate the area
+  var $blockArea = $area / $blockNumber;
+  var $blockDimensions = Math.sqrt($blockArea);
+
+  // assign the new height and width
+  $('.block').width($blockDimensions + "px");
+  $('.block').height($blockDimensions + "px");
 
   // determining size of block based on area
 
