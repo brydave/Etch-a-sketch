@@ -1,0 +1,22 @@
+{
+  "name": "etcha-sketch",
+  "version": "1.0.0",
+  "description": "**Install [Browser Sync](http://www.browsersync.io/docs/ \"Browser Sync Documentation\") Locally**",
+  "main": "/scripts/scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brydave/homemade-etch-a-sketch.git"
+  },
+  "author": "Bryan HUnt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brydave/homemade-etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/brydave/homemade-etch-a-sketch",
+  "devDependencies": {
+    "browser-sync": "^2.10.0"
+  }
+}

@@ -6,26 +6,26 @@
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
   <body>
+    <div class="wrapper">
     <section class="intro">
       <h1>Home Made Etch-A-Sketch</h1>
       <p class="intro">Created for the  <a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery" target="_blank">Odin Project's tutorial</a>. See the source files on <a href="https://github.com/brydave" target="_blank">Github</a>.</p>
     </section>
-    <section class="wrapper">
-      <div class="controls">
-        <label for="gridnumber"> Create a new grid </label>
-          <input name="gridnumber" id="gridnumber" placeholder="Resize Grid" autofocus>
-          <button id="create"  onclick="createBlocks()"> Create </button> 
+    <section class="controls">
+      <label for="gridnumber"> Create a new grid </label>
+        <input name="gridnumber" id="gridnumber" placeholder="Resize Grid" autofocus value="500">
+        <button id="create"  onclick="createBlocks()"> Create </button> 
 
-        <label> Options </label>
-          <input type="radio" name="option" value="blue" checked> Blue
-          <input type="radio" name="option" value="variable"> Variable
-          <input type="radio" name="option" value="surprise"> Surprise
-        <button> Clear </button> 
-      </section>
+      <label> Options </label>
+        <input type="radio" name="option" value="blue" checked> Blue
+        <input type="radio" name="option" value="variable"> Variable
+        <input type="radio" name="option" value="surprise"> Surprise
+      <button> Clear </button> 
+    </section>
       
-      <section class="grid">
-         <!-- generated grid -->
-      </section>
+    <section class="grid">
+       <!-- generated grid -->
+    </section>
     </div><!--wrapper-->
     <!-- browser sync -->
     <script type='text/javascript' id="__bs_script__">//<![CDATA[
