@@ -1,9 +1,11 @@
 $(document).ready(function(){
   console.log("This is ready to go!");
 
+  // Create and resize the blocks
   createBlocks();
   resizeBlocks();
 
+  // Create the blocks on enter
   $('#gridnumber').keypress(function(e){
     if(e.keyCode==13){
       createBlocks();
@@ -43,16 +45,43 @@ function resizeBlocks(){
   var $area = $width * $width;
   // get the quantity of block input in the system
   var $blockNumber = $('input#gridnumber').val();
-  // calculate the area 
+  // calculate the area
   var $blockArea = $area / $blockNumber;
+  // get the width and height, floor the %, then subtrack 1 to fit visually
   var $blockDimensions = Math.floor(Math.sqrt($blockArea) - 1);
 
   // assign the new height and width
   $('.block').width($blockDimensions + "px");
   $('.block').height($blockDimensions + "px");
 
-  console.log($blockDimensions + " this is the width of the block");
+  // Change the color on Hover
+  changeColor()
+}
 
-  // determining size of block based on area
+function createBlocksResize(){
+// Runs both functions in one function 
+// this is for the "create" button
+  createBlocks();
+  resizeBlocks();
+}
 
+function changeColor(){
+  // Change the color on hover to blue if the blue radio button is selected
+  if($('#radio-blue').is(':checked')){
+    $('.block').hover( function(){
+      $(this).addClass('blue');
+    });
+  } else if($('#radio-variable').is(':checked')){
+    $('.block').hover(function(){
+      $(this).addClass('variable');
+    });
+  } else if($('#radio-surprise').is(':checked')){
+    $('.block').hover(function(){
+      $(this).addClass('surprise');
+    });
+  } else{
+    $('.block').hover(function(){
+      $(this).addClass('blue');
+    });
+  }
 }

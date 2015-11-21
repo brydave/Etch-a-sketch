@@ -14,12 +14,12 @@
     <section class="controls">
       <label for="gridnumber"> Create a new grid </label>
         <input name="gridnumber" id="gridnumber" placeholder="Resize Grid" autofocus value="500">
-        <button id="create"  onclick="createBlocks()"> Create </button> 
+        <button id="create"  onclick="createBlocksResize()"> Create </button> 
 
       <label> Options </label>
-        <input type="radio" name="option" value="blue" checked> Blue
-        <input type="radio" name="option" value="variable"> Variable
-        <input type="radio" name="option" value="surprise"> Surprise
+        <input id="radio-blue" type="radio" name="option" value="blue" checked> Blue 
+        <input id="radio-variable" type="radio" name="option" value="variable"> Variable
+        <input id="radio-surprise" type="radio" name="option" value="surprise"> Surprise
       <button> Clear </button> 
     </section>
       
