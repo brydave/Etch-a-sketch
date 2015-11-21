@@ -100,10 +100,10 @@ function changeColor(){
 }
 
 function varyColor(){
-  var colorA = #c60740;
-  var colorB = #030f40;
-  var colorC = #02737f;
-  var colorD = #69b7bf;
-  var colorE = #FFFFFF;
+  var colorA = '#c60740';
+  var colorB = '#030f40';
+  var colorC = '#02737f';
+  var colorD = '#69b7bf';
+  var colorE = '#FFFFFF';
 }
 
