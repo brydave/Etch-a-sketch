@@ -34,12 +34,10 @@ p{
   float: left;
   line-height: 0;
   margin: 0;
-/*  height: 50px;
-  width: 50px;*/
   padding: 0;
 }
 
-.intro{
+.intro {
   max-width: 800px;
 }
 
@@ -52,15 +50,15 @@ p{
 .grid { 
   background: #FFF;
   display: table;
-  height: auto;
   height: 800px;
-  width: 800px;
+  height: auto;
   padding: 20px;
+  width: 800px;
 }
 .clearfix:after {
+  clear: both;
   content: " "; /* Older browser do not support empty content */
-  visibility: hidden;
   display: block;
   height: 0;
-  clear: both;
+  visibility: hidden;
 }

@@ -1,6 +1,9 @@
 $(document).ready(function(){
   console.log("This is ready to go!");
 
+  createBlocks();
+  resizeBlocks();
+
   $('#gridnumber').keypress(function(e){
     if(e.keyCode==13){
       createBlocks();
@@ -19,7 +22,7 @@ function createBlocks(){
   // then loop through the input number
   // and generate that number of blocks
   for (var i = 0; i < $gridSize; i++){
-    var $block = $('<section class="block"></div>');
+    var $block = $('<div class="block"></div>');
     $('.block-wrapper').append($block).fadeIn();
   }
 
@@ -37,16 +40,18 @@ function resizeBlocks(){
   var $width = $('.grid').width();
   var $height = $('.grid').height();
   // then find the area of 'grid'
-  var $area = $width * $height;
+  var $area = $width * $width;
   // get the quantity of block input in the system
   var $blockNumber = $('input#gridnumber').val();
-  // calculate the area
+  // calculate the area 
   var $blockArea = $area / $blockNumber;
-  var $blockDimensions = Math.sqrt($blockArea);
+  var $blockDimensions = Math.floor(Math.sqrt($blockArea) - 1);
 
   // assign the new height and width
   $('.block').width($blockDimensions + "px");
   $('.block').height($blockDimensions + "px");
+
+  console.log($blockDimensions + " this is the width of the block");
 
   // determining size of block based on area
 
