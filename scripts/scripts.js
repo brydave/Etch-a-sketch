@@ -1,9 +1,6 @@
 $(document).ready(function(){
-  console.log("This is ready to go!");
-
   // Create and resize the blocks
-  createBlocks();
-  resizeBlocks();
+  createBlocksResize();
 
   // Create the blocks on enter
   $('#gridnumber').keypress(function(e){
@@ -12,6 +9,9 @@ $(document).ready(function(){
       resizeBlocks();
     }
   });
+
+  // Change the color on Hover
+  changeColor();
 
 });
 
@@ -40,7 +40,6 @@ function resizeBlocks(){
   // gathering up all of the quantities
   // start by finding width and height of 'grid'
   var $width = $('.grid').width();
-  var $height = $('.grid').height();
   // then find the area of 'grid'
   var $area = $width * $width;
   // get the quantity of block input in the system
@@ -54,8 +53,6 @@ function resizeBlocks(){
   $('.block').width($blockDimensions + "px");
   $('.block').height($blockDimensions + "px");
 
-  // Change the color on Hover
-  changeColor()
 }
 
 function createBlocksResize(){
@@ -66,22 +63,47 @@ function createBlocksResize(){
 }
 
 function changeColor(){
-  // Change the color on hover to blue if the blue radio button is selected
-  if($('#radio-blue').is(':checked')){
-    $('.block').hover( function(){
-      $(this).addClass('blue');
-    });
-  } else if($('#radio-variable').is(':checked')){
-    $('.block').hover(function(){
-      $(this).addClass('variable');
-    });
-  } else if($('#radio-surprise').is(':checked')){
-    $('.block').hover(function(){
-      $(this).addClass('surprise');
-    });
-  } else{
-    $('.block').hover(function(){
-      $(this).addClass('blue');
-    });
-  }
+
+  $('.block').hover(function(){
+    $(this).addClass('blue');
+  })
+
+  $('#selection input').on('change', function() {
+    var selection = $('input[name=option]:checked', '#selection').val();
+    console.log(selection);
+
+    // Change class based on selection
+    if(selection === 'blue'){
+      $('.block').hover(function(){
+        $(this).addClass('blue');
+        $(this).removeClass('variable');
+        $(this).removeClass('surprise');
+      })
+    } else if(selection === 'variable'){
+      $('.block').hover(function(){
+        $(this).addClass('variable');
+        $(this).removeClass('blue');
+        $(this).removeClass('surprise');
+      })
+    } else if(selection === 'surprise'){
+      $('.block').hover(function(){
+        $(this).addClass('surprise');
+        $(this).removeClass('blue');
+        $(this).removeClass('variable');
+      })
+    } else{
+      $('.block').hover(function(){
+        $(this).addClass('blue');
+      })
+    };
+  });
 }
+
+function varyColor(){
+  var colorA = #c60740;
+  var colorB = #030f40;
+  var colorC = #02737f;
+  var colorD = #69b7bf;
+  var colorE = #FFFFFF;
+}
+
