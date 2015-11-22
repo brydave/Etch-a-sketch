@@ -13,6 +13,8 @@ $(document).ready(function(){
   // Change the color on Hover
   changeColor();
 
+  // Variable Color for second option
+  console.log(randomColors());
 });
 
 function createBlocks(){
@@ -99,11 +101,20 @@ function changeColor(){
   });
 }
 
-function varyColor(){
-  var colorA = '#c60740';
-  var colorB = '#030f40';
-  var colorC = '#02737f';
-  var colorD = '#69b7bf';
-  var colorE = '#FFFFFF';
+function randomColors(){
+  // set the color values in an array
+  var colors = ['#c60740', '#030f40;', '#02737f', '#69b7bf', '#FFFFFF'];
+  // set min and max
+  var min = 1;
+  var max = 6;
+  // generate a random number between 0 and 5
+  var ranNum = function generateNum(){
+    return (Math.floor(Math.random() * (max - min) + min)) - 1;
+  }
+
+  
+
+
 }
+
 
