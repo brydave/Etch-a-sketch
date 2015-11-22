@@ -13,6 +13,11 @@ $(document).ready(function(){
   // Change the color on Hover
   changeColor();
 
+  // Reset color when clear is pushed
+  $('button#clear').on("click", function(){
+    clearAll();
+  });
+
 });
 
 function createBlocks(){
@@ -62,39 +67,51 @@ function createBlocksResize(){
   resizeBlocks();
 }
 
-function changeColor(){
+function clearAll(){
+  // Clear all of the classes by resetting the class attribute
+  $('.block').fadeTo(100, 1);
+  $('.block').attr('class', 'block');
+}
 
+function changeColor(){
+  // by default add the class blue on hover
   $('.block').hover(function(){
     $(this).addClass('blue');
   });
 
+  // depending on the selection, change the hover effect
   $('#selection input').on('change', function() {
     var selection = $('input[name=option]:checked', '#selection').val();
     console.log(selection);
 
     // Change class based on selection
+
+    // Hover blue only
     if(selection === 'blue'){
+      $('.block').fadeTo("fast", 1);
       $('.block').hover(function(){
+        // resets state of block
+        $(this).attr('class', 'block');
         $(this).addClass('blue');
-        $(this).removeClass('variable');
-        $(this).removeClass('surprise');
       });
+      // Hover a random color
     } else if(selection === 'variable'){
+      $('.block').fadeTo("fast", 1);
       $('.block').hover(function(){
+        // reset classes
+        $(this).attr('class', 'block');
         // set the color values in an array
         var colors = ['red', 'blue', 'light', 'lightblue', 'lightestblue'];
         // select a random color
         var ranNum = Math.floor(Math.random() * colors.length);
-
-        $(this).addClass(colors[ranNum]);
-        $(this).removeClass('blue');
-        $(this).removeClass('surprise');
+        // add the random class number
+        $(this).addClass(colors[ranNum]);        
       });
     } else if(selection === 'surprise'){
       $('.block').hover(function(){
-        $(this).addClass('surprise');
-        $(this).removeClass('blue');
-        $(this).removeClass('variable');
+        $(this).attr('class', 'block');
+        // resets state of block
+        $(this).fadeTo("fast", 0);
       });
     } else{
       $('.block').hover(function(){
