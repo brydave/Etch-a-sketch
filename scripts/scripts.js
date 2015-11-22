@@ -79,24 +79,16 @@ function changeColor(){
     $(this).addClass('blue');
   });
 
-  // depending on the selection, change the hover effect
-  $('#selection input').on('change', function() {
-    var selection = $('input[name=option]:checked', '#selection').val();
-    console.log(selection);
-
-    // Change class based on selection
-
-    // Hover blue only
-    if(selection === 'blue'){
-      $('.block').fadeTo("fast", 1);
+    $('input#radio-blue').click(function(){
       $('.block').hover(function(){
         // resets state of block
         $(this).attr('class', 'block');
         $(this).addClass('blue');
       });
-      // Hover a random color
-    } else if(selection === 'variable'){
-      $('.block').fadeTo("fast", 1);
+    });
+
+    // Hover a random color
+    $('input#radio-variable').click(function(){
       $('.block').hover(function(){
         // reset classes
         $(this).attr('class', 'block');
@@ -107,17 +99,14 @@ function changeColor(){
         // add the random class number
         $(this).addClass(colors[ranNum]);        
       });
-    } else if(selection === 'surprise'){
+    });
+
+    $('input#radio-surprise').click(function(){
       $('.block').hover(function(){
         $(this).attr('class', 'block');
         // resets state of block
-        $(this).fadeTo("fast", 0);
+        $(this).addClass('fade-out');
       });
-    } else{
-      $('.block').hover(function(){
-        $(this).addClass('blue');
-      });
-    }
-  });
+    });
 }
 

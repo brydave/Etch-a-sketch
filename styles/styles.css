@@ -32,10 +32,12 @@ p{
 .block {
   background: #c1c1c1;
   border: 1px solid #FFF;
+  cursor: pointer;
   display: inline-block;
   float: left;
   line-height: 0;
   margin: 0;
+  opacity: 1;
   padding: 0;
 }
 
@@ -91,8 +93,8 @@ p{
   background: #FF0;
 }
 
-.surprise {
-  background: #005f64;
+.fade-out {
+  opacity: .25;
 }
 
 
