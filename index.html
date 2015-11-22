@@ -12,15 +12,28 @@
       <p class="intro">Created for the  <a href="http://www.theodinproject.com/web-development-101/javascript-and-jquery" target="_blank">Odin Project's tutorial</a>. See the source files on <a href="https://github.com/brydave" target="_blank">Github</a>.</p>
     </section>
     <section id="selection" class="controls">
-      <label for="gridnumber"> Create a new grid </label>
+      <div class="step one">
+      <h2> Create a new grid </h2>
         <input name="gridnumber" id="gridnumber" placeholder="Resize Grid" autofocus value="500">
-        <button id="create"  onclick="createBlocksResize()"> Create </button> 
+        <button id="create"  onclick="createBlocksResize()"> Create </button>
+      </div>
 
-      <label> Options </label>
-        <input id="radio-blue" type="radio" name="option" value="blue" checked> Blue 
-        <input id="radio-variable" type="radio" name="option" value="variable" > Variable
-        <input id="radio-surprise" type="radio" name="option" value="surprise"> Eraser
+      <div class="step two">
+      <div class="toggle-btn-grp joint-toggle">
+        <label class="toggle-btn">
+          <input id="radio-blue" type="radio" name="option" value="blue" checked>Blue
+        </label>
+
+        <label class="toggle-btn">
+          <input id="radio-variable" type="radio" name="option" value="variable" > Variable 
+        </label>
+
+        <label class="toggle-btn">
+          <input id="radio-surprise" type="radio" name="option" value="surprise"> Eraser 
+        </label>
+      </div>
       <button id="clear"> Clear </button> 
+      </div>
     </section>
       
     <section class="grid">

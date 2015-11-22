@@ -1,5 +1,7 @@
 html{
   box-sizing: border-box;
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
 }
 
 *, *:before, *:after{
@@ -15,8 +17,20 @@ body {
   margin: 0 auto;
 }
 
-section{
-  margin:20px 0;
+label{
+  display: inline-block;
+  cursor:pointer;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+
+section, .step {
+  margin: 20px 0;
+}
+
+.step {
+  display: inline;
+  margin-right: 20px;
 }
 
 h1 {
@@ -25,13 +39,42 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  color: #333;
+  font-size: .9em;
+  text-transform: uppercase;
+}
+
 p{
   margin: 5px 0;
 }
 
+input {
+  border-radius: 3px;
+  border: 1px solid #999;
+  box-shadow: 0;
+  font-size: 1em;
+  padding: 10px 15px;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  background: #C60740;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 15px;
+  transition: all, .4s;
+}
+
+button:hover {
+  background: #69B7BF;
+}
+
 .block {
   background: #c1c1c1;
-  border: 1px solid #FFF;
+  border: .5px solid #FFF;
   cursor: pointer;
   display: inline-block;
   float: left;
@@ -96,6 +139,70 @@ p{
 .fade-out {
   opacity: .25;
 }
+
+
+.toggle-btn-grp { 
+    margin: 0 5px 0 0; 
+    display: inline-block;
+}
+.toggle-btn { 
+    text-align:centre; 
+    margin:0 -3px;
+    padding:0; 
+    color:#000; 
+    background-color:#FFF; 
+    border-radius:3px; 
+    display:inline-block; 
+    border:solid 1px #CCC; 
+    cursor:pointer;
+}
+
+.toggle-btn-grp.joint-toggle .toggle-btn { 
+    padding:0.7em 2em; 
+    border-radius:0;
+    border-right-color:white;
+}
+.toggle-btn-grp.joint-toggle .toggle-btn:first-child { 
+  border-radius: 3px 0px 0px 3px; 
+}
+.toggle-btn-grp.joint-toggle .toggle-btn:last-child { 
+  border-radius: 0px 3px 3px 0px;
+  border-right:solid 1px #CCC;
+}
+
+
+.toggle-btn:hover { 
+  border:solid 1px #69B7BF !important; 
+  background:#f1fdfe;
+}
+
+
+.toggle-btn.success { 
+  background:#02737F;
+  border: 1px solid #02737F;
+  color: #FFF;
+}
+
+
+.visuallyhidden { 
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px; 
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { 
+    clip: auto; 
+    height: auto; 
+    margin: 0; 
+    overflow: visible; 
+    position: static; 
+    width: auto; 
+}
+
 
 
 
