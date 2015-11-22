@@ -78,11 +78,12 @@ function changeColor(){
   $('.block').hover(function(){
     $(this).addClass('blue');
   });
-
+    // change to blue on hover
     $('input#radio-blue').click(function(){
       $('.block').hover(function(){
         // resets state of block
         $(this).attr('class', 'block');
+        // add blue class on hover
         $(this).addClass('blue');
       });
     });
@@ -101,10 +102,12 @@ function changeColor(){
       });
     });
 
+    // change to opacity on hover
     $('input#radio-surprise').click(function(){
       $('.block').hover(function(){
-        $(this).attr('class', 'block');
         // resets state of block
+        $(this).attr('class', 'block');
+        // Add class for fade-out
         $(this).addClass('fade-out');
       });
     });
