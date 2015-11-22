@@ -69,7 +69,6 @@ function createBlocksResize(){
 
 function clearAll(){
   // Clear all of the classes by resetting the class attribute
-  $('.block').fadeTo(100, 1);
   $('.block').attr('class', 'block');
 }
 
