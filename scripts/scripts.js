@@ -13,8 +13,6 @@ $(document).ready(function(){
   // Change the color on Hover
   changeColor();
 
-  // Variable Color for second option
-  console.log(randomColors());
 });
 
 function createBlocks(){
@@ -68,7 +66,7 @@ function changeColor(){
 
   $('.block').hover(function(){
     $(this).addClass('blue');
-  })
+  });
 
   $('#selection input').on('change', function() {
     var selection = $('input[name=option]:checked', '#selection').val();
@@ -80,41 +78,29 @@ function changeColor(){
         $(this).addClass('blue');
         $(this).removeClass('variable');
         $(this).removeClass('surprise');
-      })
+      });
     } else if(selection === 'variable'){
       $('.block').hover(function(){
-        $(this).addClass('variable');
+        // set the color values in an array
+        var colors = ['red', 'blue', 'light', 'lightblue', 'lightestblue'];
+        // select a random color
+        var ranNum = Math.floor(Math.random() * colors.length);
+
+        $(this).addClass(colors[ranNum]);
         $(this).removeClass('blue');
         $(this).removeClass('surprise');
-      })
+      });
     } else if(selection === 'surprise'){
       $('.block').hover(function(){
         $(this).addClass('surprise');
         $(this).removeClass('blue');
         $(this).removeClass('variable');
-      })
+      });
     } else{
       $('.block').hover(function(){
         $(this).addClass('blue');
-      })
-    };
+      });
+    }
   });
 }
-
-function randomColors(){
-  // set the color values in an array
-  var colors = ['#c60740', '#030f40;', '#02737f', '#69b7bf', '#FFFFFF'];
-  // set min and max
-  var min = 1;
-  var max = 6;
-  // generate a random number between 0 and 5
-  var ranNum = function generateNum(){
-    return (Math.floor(Math.random() * (max - min) + min)) - 1;
-  }
-
-  
-
-
-}
-
 

@@ -67,8 +67,24 @@ p{
 }
 
 /* Colors */
+.red {
+  background: #C60740;
+}
+
 .blue {
-  background: #000;
+  background: #030F40;
+}
+
+.light {
+  background: #E4E4E4;
+}
+
+.lightblue {
+  background: #02737F;
+}
+
+.lightestblue {
+  background: #69B7BF;
 }
 
 .variable {
