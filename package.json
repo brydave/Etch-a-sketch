@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/brydave/homemade-etch-a-sketch",
   "devDependencies": {
-    "browser-sync": "^2.10.0"
+    "browser-sync": "^2.12.12"
   }
 }
